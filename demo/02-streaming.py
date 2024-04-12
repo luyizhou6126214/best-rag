@@ -26,6 +26,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.messages import HumanMessage
 
 
+
 os.environ['OPENAI_API_KEY'] = 'sk-yqyDwbVVMgQJKlFU133d3c25E3A745E5Aa6a4b9b2dB6Ec0c'
 os.environ['OPENAI_BASE_URL'] = 'https://sg.hirenyi.com/v1'
 
