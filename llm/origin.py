@@ -35,25 +35,28 @@ def chat(input):
 
 
 if __name__ == '__main__':
-    import pandas as pd
-    df = pd.read_excel(r"/Users/luyizhou/Desktop/模型命中效果对比_光子_昆仑_幻方_秀财.xlsx")
+    query = "你是哪家公司研发的"
+    print(chat(query))
 
-    # df = df.head(1)
-    temp_result = []
-    try:
-        for index,row in df.iterrows():
-            question = row['问题']
-            print('=' * 50)
-            print(f'==> index: {index}')
-            print(f'==> Q: {question}')
-            answer = chat(question)
-            print(f'==> A: {answer}')
-            print('\n\n')
-            df.at[index, 'showcai-13b'] = answer
-            temp_result.append({'quesion': question, 'answer': answer})
-        df.to_excel('output.xlsx', index=False)
-    except Exception as e:
-        print(str(e))
-    finally:
-        with open('temp.json', 'w') as f:
-            f.write(json.dumps(temp_result, ensure_ascii=False))
+    # import pandas as pd
+    # df = pd.read_excel(r"/Users/luyizhou/Desktop/模型命中效果对比_光子_昆仑_幻方_秀财.xlsx")
+    #
+    # # df = df.head(1)
+    # temp_result = []
+    # try:
+    #     for index,row in df.iterrows():
+    #         question = row['问题']
+    #         print('=' * 50)
+    #         print(f'==> index: {index}')
+    #         print(f'==> Q: {question}')
+    #         answer = chat(question)
+    #         print(f'==> A: {answer}')
+    #         print('\n\n')
+    #         df.at[index, 'showcai-13b'] = answer
+    #         temp_result.append({'quesion': question, 'answer': answer})
+    #     df.to_excel('output.xlsx', index=False)
+    # except Exception as e:
+    #     print(str(e))
+    # finally:
+    #     with open('temp.json', 'w') as f:
+    #         f.write(json.dumps(temp_result, ensure_ascii=False))
